@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="TestMVCvsHibernate:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="TestMVCvsHibernate.war">
+      <element id="artifact" artifact-name="TestMVCvsHibernate:war exploded" />
+    </root>
+  </artifact>
+</component>
