@@ -29,6 +29,7 @@ public class HelloController {
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public String insert(){
+		//local
 		/*User f_test = userService.getUserById(1);
 		authorizationService.saveAuth(new Authorization("login1","2",1,f_test));
 		authorizationService.saveAuth(new Authorization("login2","2",1,f_test));
