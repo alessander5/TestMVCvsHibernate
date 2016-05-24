@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.springapp.mvc"/>
+    <context:component-scan base-package="com.infy"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -15,7 +15,7 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/edeclaration"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/jsf"/>
         <property name="username" value="postgres"/>
         <property name="password" value="qwerty"/>
         <property name="validationQuery" value="SELECT 1"/>
@@ -23,7 +23,7 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.springapp.mvc.domein"/>
+        <property name="packagesToScan" value="com.infy.domein"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
@@ -40,10 +40,10 @@
     <property name="dataSource" ref="dataSource"/>
 </bean>
 
-    <bean id="authorizationDao" class="com.springapp.mvc.dao.AutorizationDaoImpl"/>
-    <bean id="userDao" class="com.springapp.mvc.dao.UserDaoImpl"/>
+    <bean id="fileDao" class="com.infy.dao.FileInfoDaoImpl"/>
+    <bean id="userDao" class="com.infy.dao.UserDaoImpl"/>
 
-    <bean id="authorizationService" class="com.springapp.mvc.service.AuthorzationServiceImpl"/>
+    <bean id="fileService" class="com.infy.service.FileInfoServiceImpl"/>
+    <bean id="userService" class="com.infy.service.UserServiceImpl"/>
 
-    <bean id="userService" class="com.springapp.mvc.service.UserServiceImpl"/>
 </beans>
